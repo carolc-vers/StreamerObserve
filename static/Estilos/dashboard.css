@@ -10,14 +10,18 @@
 .navigation{
     position: relative;
     height: 700px;
-    background-color: #424242;
+    background-color: black;
     width: 70px;
     box-shadow: 10px 0 0 #F21616;
-    border-left: 10px solid #424242;
+    border-left: 10px solid black;
     overflow: hidden;
     transition: 0.5s;
     display: flex;
     float: left;
+}
+
+.navigation:hover .logo {
+    display: inline;
 }
 
 .navigation:hover{
@@ -85,7 +89,7 @@
     right: 0;
     width: 30px;
     height: 30px;
-    background: #424242;
+    background: black;
     border-radius: 50%;
     box-shadow: 15px 15px 0 #F21616;
 }
@@ -97,29 +101,29 @@
     right: 0;
     width: 30px;
     height: 30px;
-    background: #424242;
+    background: black;
     border-radius: 50%;
     box-shadow: 15px -15px 0 #F21616;
 }
 
 .logo{
-    display: block;
     color: #fff;
     flex: 1;
     align-self: flex-end;
     text-align: center;
     transition: 0.5s;
     overflow: hidden;
+    display: none;
 }
 
 /*--------------------------------------------------FIM BARRA DE MENU VERTICAL-----------------------------------------------------------*/
+/*--------------------------------------------------INÍCIO CABEÇALHO-----------------------------------------------------------*/
+
 
 .cabecalho{
-    width: 170%;
+    width: 100%;
     height: 80px;
     background: black;
-    display: flex;
-    float: right;
 }
 
 label.logo{
@@ -133,3 +137,16 @@ label img{
     padding-top: 5px;
     border: transparent;
 }
+
+.user{
+    color: #fff;
+    float: right;
+    margin-right: 40px;
+    margin: 0 8px;
+    line-height: 80px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-right: 55px;
+}
+
