@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilos/dashboards.css">
+    <title>Minhas Dashboards</title>
+</head>
+<body>
+    
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a href="Home - Usuário.html">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="Visão geral.html">
+                    <span class="icon">
+                        <ion-icon name="newspaper-outline"></ion-icon>
+                    </span>
+                    <span class="title">Visão Geral</span>
+                </a>
+            </li>
+
+            <li class="list active">
+                <a href="dashboards.html">
+                    <span class="icon">
+                        <ion-icon name="analytics-outline"></ion-icon>
+                    </span>
+                    <span class="title">Dashboards</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="help-circle-outline"></ion-icon>
+                    </span>
+                    <span class="title">Ajuda</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="cadastro_streamer.html">
+                    <span class="icon">
+                        <ion-icon name="exit-outline"></ion-icon>
+                    </span>
+                    <span class="title">Sair</span>
+                </a>
+            </li>
+        </ul>
+        <span class="logo">Stream Observer©</span>
+    </div>
+
+    <div class="cabecalho">
+        <div class="container_nav">
+            <label class="logo_animado"><img src="Estilos/Imagens/logo_animado.gif"></label>
+            <div class="perfil">
+                <img class="foto_user" src="Estilos/Imagens/user.png">
+                <p class="text">Nome - Tipo do Plano <br>
+                    seuemail@email.com
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboards">
+        <div class="infos_dash">
+            <span class="titulo_dash">
+                <h1>Minhas Dashboards</h1>
+                Por favor, selecione de qual hardware você deseja ver o desempenho:
+            </span>
+        </div>
+
+        <div class="botoes_dash">
+            <button class="btn" id="btn_cpu" onclick="ver_graficoCPU()">CPU</button>
+            <button class="btn" id="btn_disco" onclick="vergraficoDisco()">Disco</button>
+            <button class="btn" id="btn_ram" onclick="vergraficoRam()">Memória RAM</button>
+        </div>
+    </div>
+
+    <div class="box_dash">
+        <div class="container_dash">
+            <div class="infos_maquina">
+                <div class="div_info">
+                    <span class="info"> @nickname <br>
+                        <h2>CPU</h2>
+                        <img width="50px" src="Estilos/Imagens/attention.png"> <br>
+                        Informações do Processador -
+                        Fabricante: GenuineIntel <br>
+                        Nome: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz <br>
+                        Id: AFC1FBFF008006C1 <br>
+                        Identificador: Intel64 Family 6 Model 140 Stepping 1 <br>
+                        Microarquitetura: Tiger Lake <br>
+                        Frequência: 2400000000 <br>
+                        Número de Pacotes Físicos: 1 <br>
+                        Número de CPUs Fisícas: 4 <br>
+                        Número de CPUs Lógicas: 8 <br>
+                    </span>
+                </div>
+            </div>
+            <div class="grafico">
+                <canvas class="line" id="chart1"
+            style="display: block; box-sizing: border-box; height: 400px; width: 700px;"></canvas>
+            </div>
+        </div>
+        <div class="dados_variaveis">
+            <span class="info">
+                <h2>Dados Variáveis: </h2>
+                Em Uso: 19,3 <br>
+                Temperatura: 36,0
+            </span>
+        </div>
+    </div>
+
+        <!--INSTALAÇÃO DOS ICONS UTILIZADOS NA PÁGINA-->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!--FIM-->
+
+        <!--MUDANDO A CLASSE DA PAGINA SELECIONADA NA SIDEBAR-->
+        <script>
+            const list = document.querySelectorAll('.list');
+            function activeLink() {
+                list.forEach((item) =>
+                    item.classList.remove('active'));
+                this.classList.add('active');
+            }
+
+            list.forEach((item) =>
+                item.addEventListener('click', activeLink));
+        </script>
+        <!--FIM-->
+
+         <!--CHART.JS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var ctx = document.getElementById('chart1').getContext('2d');
+        var MyChart = new Chart(ctx,
+            config = {
+                type: 'line',
+                data: data = {
+                    labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+                    datasets: [{
+                        label: 'Uso Semanal',
+                        data: [65, 59, 80, 81, 56, 55, 40],
+                        fill: false,
+                        backgroundColor: '#F21616',
+                        borderColor: '#F21616',
+                        tension: 0.1
+
+                    }]
+                }
+            });
+    </script>
+
+</body>
+</html>

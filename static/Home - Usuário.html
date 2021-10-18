@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilos/home-usuario.css">
+    <title>Home - Bem-vindo!</title>
+</head>
+
+<body>
+
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="Home - Usuário.html">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="Visão geral.html">
+                    <span class="icon">
+                        <ion-icon name="newspaper-outline"></ion-icon>
+                    </span>
+                    <span class="title">Visão Geral</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="dashboards.html">
+                    <span class="icon">
+                        <ion-icon name="analytics-outline"></ion-icon>
+                    </span>
+                    <span class="title">Dashboards</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="help-circle-outline"></ion-icon>
+                    </span>
+                    <span class="title">Ajuda</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="cadastro_streamer.html">
+                    <span class="icon">
+                        <ion-icon name="exit-outline"></ion-icon>
+                    </span>
+                    <span class="title">Sair</span>
+                </a>
+            </li>
+        </ul>
+        <span class="logo">Stream Observer©</span>
+    </div>
+
+
+    <div class="cabecalho">
+        <div class="container_nav">
+            <label class="logo_animado"><img src="Estilos/Imagens/logo_animado.gif"></label>
+            <div class="perfil">
+                <img class="foto_user" src="Estilos/Imagens/user.png">
+                <p class="text">Nome - Tipo do Plano <br>
+                    seuemail@email.com
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="box_overview">
+        <span class="text_overview">Overview</span>
+        <div class="container_medias">
+            <div class="medias">
+                <div class="grafico">
+                    <canvas id="chart1"></canvas>
+                </div>
+                <div class="info_grafico">
+                    <span class="info">
+                        Uso diário do Componente - <br>
+                        Tempo em atividade: 07:27:14</span>
+                </div>
+            </div>
+            <div class="medias">
+                <div class="grafico">
+                    <canvas id="chart2"></canvas>
+                </div>
+                <div class="info_grafico">
+                    <span class="info">Média do uso diário - Tempo: 04h32min23seg</span>
+                </div>
+            </div>
+            <div class="medias">
+                <div class="grafico">
+                    <canvas id="chart3"></canvas>
+                </div>
+
+                <div class="info_grafico">
+                    <span class="info">Utilização do Processador: 90% <br>
+                        Velocidade: 26 Ghz <br>
+                        Tempo: 01:54:09
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grafico_linha">
+        <span class="text_overview" style="color: black;">Uso Semanal</span>
+        <canvas class="line" id="chart4"
+            style="display: block; box-sizing: border-box; height: 600px; width: 955px;"></canvas>
+    </div>
+
+    <div class="box_hardware">
+        <span class="text_overview" style="color: black;">Principais Hardwares</span>
+        <div class="container_hardware">
+            <div class="hardware CPU">
+                <span class="info_hardware">CPU</span>
+            </div>
+            <div class="hardware ram">
+                <span class="info_hardware">Memória RAM</span>
+            </div>
+            <div class="hardware hd">
+                <span class="info_hardware">Disco</span>
+            </div>
+        </div>
+    </div>
+
+    <!--INSTALAÇÃO DOS ICONS UTILIZADOS NA PÁGINA-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!--FIM-->
+
+    <!--MUDANDO A CLASSE DA PAGINA SELECIONADA NA SIDEBAR-->
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('active'));
+            this.classList.add('active');
+        }
+
+        list.forEach((item) =>
+            item.addEventListener('click', activeLink));
+    </script>
+    <!--FIM-->
+
+    <!--CHART.JS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--GRÁFICOS-->
+    <script>
+        // USO DIÁRIO
+        var ctx = document.getElementById('chart1').getContext('2d');
+        var MyChart = new Chart(ctx,
+            config = {
+                type: 'doughnut',
+                data: data = {
+                    labels: [
+                        'Uso Diário'
+                    ],
+                    datasets: [{
+                        label: 'My First Dataset',
+                        data: [200, 150],
+                        backgroundColor: [
+                            '#F21616',
+                            '#ccc'
+                        ],
+                        hoverOffset: 4
+                    }]
+                }
+            });
+
+        // MÉDIA DE UTILIZAÇÃO 
+        var ctx = document.getElementById('chart2').getContext('2d');
+        var MyChart = new Chart(ctx,
+            config = {
+                type: 'doughnut',
+                data: data = {
+                    labels: [
+                        'Média do Uso'
+                    ],
+                    datasets: [{
+                        label: 'My First Dataset',
+                        data: [150, 200],
+                        backgroundColor: [
+                            '#F21616',
+                            '#ccc'
+                        ],
+                        hoverOffset: 4
+                    }]
+                }
+            });
+
+        //TOTAL UTILIZADO
+        var ctx = document.getElementById('chart3').getContext('2d');
+        var MyChart = new Chart(ctx,
+            config = {
+                type: 'doughnut',
+                data: data = {
+                    labels: [
+                        'Total Utilizado'
+                    ],
+                    datasets: [{
+                        label: 'My First Dataset',
+                        data: [300, 50],
+                        backgroundColor: [
+                            '#F21616',
+                            '#ccc'
+                        ],
+                        hoverOffset: 4
+                    }]
+                }
+            });
+
+        // MÉDIA SEMANAL
+        var ctx = document.getElementById('chart4').getContext('2d');
+        var MyChart = new Chart(ctx,
+            config = {
+                type: 'line',
+                data: data = {
+                    labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+                    datasets: [{
+                        label: 'Uso Semanal',
+                        data: [65, 59, 80, 81, 56, 55, 40],
+                        fill: false,
+                        backgroundColor: '#F21616',
+                        borderColor: '#F21616',
+                        tension: 0.1
+
+                    }]
+                }
+            });
+    </script>
+
+</body>
+
+</html>

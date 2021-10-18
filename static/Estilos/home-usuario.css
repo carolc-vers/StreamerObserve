@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Poppins&display=swap%27');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+.navigation{
+    position: relative;
+    height: 1500px;
+    background-color: black;
+    width: 70px;
+    box-shadow: 10px 0 0 #F21616;
+    border-left: 10px solid black;
+    overflow: hidden;
+    transition: 0.5s;
+    display: flex;
+    float: left;
+}
+
+.navigation:hover .logo {
+    display: inline;
+}
+
+.navigation:hover{
+    width: 300px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.navigation ul li a .icon ion-icon{
+    position: relative;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.navigation ul li.active{
+    background: #F21616;
+}
+
+.navigation ul li.active a::before{
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: black;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 #F21616;
+}
+
+.navigation ul li.active a::after{
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: black;
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 #F21616;
+}
+
+.logo{
+    color: #fff;
+    flex: 1;
+    align-self: flex-end;
+    text-align: center;
+    transition: 0.5s;
+    overflow: hidden;
+    display: none;
+}
+
+/*--------------------------------------------------FIM BARRA DE MENU VERTICAL-----------------------------------------------------------*/
+/*--------------------------------------------------INÍCIO CABEÇALHO-----------------------------------------------------------*/
+
+
+.cabecalho{
+    width: 100%;
+    height: 80px;
+    background: black;
+    border-bottom: 0.5px solid #F21616;
+}
+
+label.logo{
+    padding: 0 100px;
+    line-height: 80px;
+}
+
+label img{
+    height: 70px;
+    width: 130px;
+    padding-top: 5px;
+    border: transparent;
+}
+
+.perfil{
+    display: flex;
+    align-items: center;
+    float: right;
+    padding-top: 15px;
+    padding-right: 15px;
+}
+
+.foto_user{
+    height: 50px;
+    color: white;
+    padding-right: 10px;
+}
+
+.text{
+    color: white;
+    font-size: 1em;
+}
+
+.foto_user, p{
+    display: inline-block;
+    text-align: center;
+}
+
+/*--------------------------------------------------FIM CABEÇALHO-------------------------------------------------------------*/
+/*--------------------------------------------------INÍCIO OVERVIEW-----------------------------------------------------------*/
+
+.box_overview{
+    width: 100%;
+    height: 300px;
+    background: url(Imagens/fundo_dash.jpg);
+    padding-top: 170px;
+}
+
+.text_overview{
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.user{
+    color: #fff;
+    float: left;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.container_medias{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.medias{
+    width: 350px;
+    height: 175px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: black;
+    margin-left: 25px;
+}
+
+.grafico{
+    float: left;
+    width: 150px;
+}
+
+.info_grafico{
+    float: right;
+    display: flex;
+    width: 150px;
+    height: 175px;
+    align-items: center;
+    justify-content: center;
+}
+
+.info{
+    font-size: 0.84em;
+    font-weight: bold;
+    color: white;
+    padding-right: 30px;
+}
+
+.grafico_linha{
+    width: 100%;
+    height: 600px;
+    padding-top: 150px;
+}
+
+.line{
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/*--------------------------------------------------FIM OVERVIEW-----------------------------------------------------------*/
+/*--------------------------------------------------INÍCIO HARDWARE-----------------------------------------------------------*/
+
+.box_hardware{
+    padding-top: 225px;
+}
+
+.container_hardware{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.hardware{
+    width: 350px;
+    height: 175px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: black;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.info_hardware{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    padding-top: 25px;
+}
+
+.CPU{
+    background: url(Imagens/processador.png);
+}
+
+.ram{
+    background: url(Imagens/ram.jpg);
+}
+
+.hd{
+    background: url(Imagens/hd.jpg);
+}
+
